@@ -9,9 +9,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //
   // Now set up the states
   $stateProvider
-    .state('login', {
-      url: "/login",
-      templateUrl: "./src/templates/login.html",
-      controller: 'loginCtrl'
-    });
+      .state('login', {
+        url: "/login",
+        templateUrl: "./src/templates/login.html",
+        controller: 'loginCtrl'
+      })
+      .state('issues', {
+        url: "/issues",
+        templateUrl: "./src/templates/issues.html",
+        controller: 'issuesCtrl'
+      });
 });
