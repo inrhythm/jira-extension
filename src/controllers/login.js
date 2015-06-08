@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('loginCtrl', ['$scope', '$state', function($scope, $state) {
+app.controller('loginCtrl', ['$scope', '$state', 'JiraService', function($scope, $state, JiraService) {
   $scope.form = {
     username: "",
     password: ""
@@ -8,6 +8,6 @@ app.controller('loginCtrl', ['$scope', '$state', function($scope, $state) {
   
   $scope.login = function (username, password) {
     console.log(arguments);
-    $state.go('issues');
+    JiraService.login(username, password);
   };
 }]);
