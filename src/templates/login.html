@@ -1,9 +1,24 @@
-<h1>Login</h1>
+<h3>InRhythm Jira Login</h3>
 <hr/>
 <form>
+  <fieldset>
   <label>Username</label>
   <input ng-model="form.username" type='text' name='username'/>
   <label>Password</label>
   <input ng-model="form.password" type='password' name='password'/>
-  <input type='button' class='btn-primary' value='Sign In' ng-click="login(form.username, form.password)"/>
+  <br/>
+  <input type='submit' class='btn btn-primary' value='Sign In' ng-click="login(form.username, form.password)"/>
+  </fieldset>
 </form>
+
+
+ <!--<fieldset>-->
+ <!--   <legend>Legend</legend>-->
+ <!--   <label>Label name</label>-->
+ <!--   <input type="text" placeholder="Type something…">-->
+ <!--   <span class="help-block">Example block-level help text here.</span>-->
+ <!--   <label class="checkbox">-->
+ <!--     <input type="checkbox"> Check me out-->
+ <!--   </label>-->
+ <!--   <button type="submit" class="btn">Submit</button>-->
+ <!-- </fieldset>-->
