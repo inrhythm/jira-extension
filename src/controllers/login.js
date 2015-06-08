@@ -2,8 +2,8 @@ var app = angular.module('app');
 
 app.controller('loginCtrl', ['$scope', '$state', 'JiraService', function($scope, $state, JiraService) {
   $scope.form = {
-    username: "",
-    password: ""
+    username: "mpatel",
+    password: "Jira@Rhythm"
   };
   
   $scope.login = function (username, password) {

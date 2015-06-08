@@ -1,12 +1,13 @@
 angular.module('app').factory('JiraService', function($http, $q, $rootScope, $state, $window) {
     var token,
-        apiBase = 'http://inrhythm.atlassian.net/rest/api/2/';
+        apiBase = 'https://inrhythm.atlassian.net/rest/api/2/';
     return {
         login: function (username, password) {
             token = btoa(username + ':' + password);
             $http.defaults.headers.common.Authorization = 'Basic ' + token;
-            return $http.post(apiBase + 'search')
+            return $http.get(apiBase + 'search?jql=assignee=mpatel%20AND%20status="TO DO"')
                 .success(function(data, status) {
+                    $rootScope.issues = data.issues;
                     $state.go('issues');
                 })
                 .error(function () {
@@ -16,8 +17,7 @@ angular.module('app').factory('JiraService', function($http, $q, $rootScope, $st
         getIssues: function () {
             if (token) {
                 $http.defaults.headers.common.Authorization = 'Basic ' + token;
-                return $http.post(apiBase + 'search').success(function(data, status) {
-                });
+                return $http.get(apiBase + 'search?jql=assignee=mpatel%20AND%20status="TO DO"');
             }
         }
     };
