@@ -2,8 +2,8 @@
 <hr/>
 <form>
   <label>Username</label>
-  <input ngModel="form.username" type='text' name='username'/>
+  <input ng-model="form.username" type='text' name='username'/>
   <label>Password</label>
-  <input ngModel="form.password" type='password' name='password'/>
-  <input type='button' class='btn-primary' value='Sign In' ngClick="login(form.username, form.password)"/>
+  <input ng-model="form.password" type='password' name='password'/>
+  <input type='button' class='btn-primary' value='Sign In' ng-click="login(form.username, form.password)"/>
 </form>

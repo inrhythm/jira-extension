@@ -1,8 +1,12 @@
+var app = angular.module('app');
+
 app.controller('loginCtrl', ['$scope', function($scope) {
-  $scope.form.username = "";
-  $scope.form.password = "";
+  $scope.form = {
+    username: "",
+    password: ""
+  };
   
   $scope.login = function (username, password) {
-    alert(arguments);
+    console.log(arguments);
   };
 }]);
