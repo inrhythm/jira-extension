@@ -1,8 +1,14 @@
 <div ng-if='data.issues.length'>
   <ul>
     <li ng-repeat="issue in data.issues">
-      {{issue.fields.key}}
-      {{issue.fields.summary}}
+      <div>
+        <span>{{issue.key}}</span><br/>
+        <span>{{issue.fields.summary}}</span>
+        <br/>
+        <span>{{issue.fields.duedate}}</span>
+      </div>
+      <hr/>
+      
     </li>
   </ul>
 </div>
