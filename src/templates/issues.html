@@ -1,4 +1,12 @@
-<h1>Issues</h1>
-<div ng-repeat="issue in issues">
-  <b>{{issue.fields.summary}}</b>
+<div ng-if='data.issues.length'>
+  <ul>
+    <li ng-repeat="issue in data.issues">
+      {{issue.fields.key}}
+      {{issue.fields.summary}}
+    </li>
+  </ul>
 </div>
+<div ng-if='!data.issues.length'>
+  <h3>No tasks pending...</h3>
+</div>
+

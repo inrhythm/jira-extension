@@ -1,10 +1,10 @@
-app.controller('issuesCtrl', ['$scope', '$rootScope', 'JiraService', function($scope, $rootScope, JiraService) {
-  $scope.issues = $rootScope.issues;
-  
-  $scope.getIssues = function () {
-    JiraService.getIssues().success(function (data) {
-      $scope.issues = data.issues;
-      $scope.$apply();
-    });
+app.controller('issuesCtrl', ['$scope', '$timeout', function($scope, $timeout, JiraService) {
+  $scope.data = {
+    issues: []
   };
+  
+  JiraService.getIssues().success(function (data) {
+      $scope.data = data;
+    });
+
 }]);
